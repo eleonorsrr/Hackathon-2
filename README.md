@@ -1,1 +1,1 @@
-# Hackathon-2
+# Hackathon-2 Francesco Bandera, Francesco Crociani, Anna Impembo, Eleonora Serra
