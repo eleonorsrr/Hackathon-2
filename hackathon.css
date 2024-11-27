@@ -1,0 +1,65 @@
+/* Inizialmente non c'è alcun sfondo */
+body {
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff; /* Colore di sfondo predefinito */
+    transition: background-image 0.5s ease-in-out; /* Animazione per il cambiamento del background */
+  }
+  
+  /* Classe che si applica quando la melodia inizia a suonare */
+  .background-active {
+    background-image: url('/Users/eleonoraserra/Downloads/hackhathon/zeb89.jpg'); /* Aggiungi il percorso dell'immagine che vuoi usare */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+
+  /* Stile per i pulsanti circolari neri */
+  button {
+    font-size: 1.5em;
+    width: 60px;  /* Imposta una larghezza fissa per il cerchio */
+    height: 60px; /* Imposta un'altezza fissa per il cerchio */
+    border: none;
+    border-radius: 50%; /* Fa diventare il pulsante un cerchio */
+    background-color: black; /* Colore di sfondo nero */
+    color: white; /* Colore del testo bianco */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+
+  }
+  
+  button:hover {
+    background-color: darkgray; /* Colore quando il mouse passa sopra il pulsante */
+    transform: scale(1.1); /* Aumenta leggermente la dimensione al passaggio del mouse */
+  }
+  
+  .button1 {
+    position: absolute;
+    top: 210px;
+    left:645px;
+
+  }
+
+  .button2 {
+    position: absolute;
+    top: 207px;
+    left:800px; 
+  }
+
+
+  document.querySelector("#start-button").addEventListener("click", () => {
+    document.body.classList.add("background-active");
+    // Altri codici per avviare la melodia
+});
+
+
+document.querySelector("#stop-button").addEventListener("click", () => {
+    document.body.classList.remove("background-active");
+    // Altri codici per fermare la melodia
+});
