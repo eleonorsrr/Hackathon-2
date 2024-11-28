@@ -24,12 +24,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const bassSynth = new Tone.MonoSynth({
         oscillator: { type: 'sawtooth' },
         envelope: { attack: 0.01, decay: 0.2, sustain: 0.5, release: 1 },
-    }).connect(bassGain);
+    }).connect(bassGain);;
     // 2.3 Synth 3 (chords)
     const chordSynth = new Tone.PolySynth(Tone.Synth, {
         oscillator: { type: 'triangle' },
         envelope: { attack: 0.05, decay: 0.3, sustain: 0.6, release: 1 },
-    }).connect(chordGain);
+    }).connect(chordGain);;
 
     // 3 Percussioni
     // 3.1 Kick 
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Eb2", "F2", "C2", null,
         "C2", "D2", "Eb2", null, 
         "F2", null, "G2", null,
-    ];
+        ];
     // 4.3 chords
     const chords = [
         ["G4", "Bb4"], // Accordo di G minore
@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { time: 0, type: "startKickClap" }, // Batteria all'inizio
         { time: "7.5s", type: "startArpeggio" }, // Dopo 4 battute aggiungi arpeggio
         { time: "15.5s", type: "startChords" }, // Dopo 8 battute aggiungi accordi
-        { time: "31.5s", type: "startBass" }, // Dopo 8 battute aggiungi bassi
+        { time: "31.5s", type: "startBass" }, // Dopo 8 battute aggiungi accordi
     ]);
 
     // 8 Controlli
@@ -144,8 +144,25 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     // 8.2 Stop
     document.querySelector("#stop-button").addEventListener("click", () => {
-        songStructure.stop(); // Ferma la struttura
+        songStructure.stop(); // Avvia la struttura
         Tone.Transport.stop();
     });
+});
 
+// visualssss
+
+
+// Aggiungi l'effetto di sfondo quando premi "Start"
+document.getElementById('start-button').addEventListener('click', () => {
+    // Aggiungi la classe che mostra lo sfondo
+    document.body.classList.add('background-active');
+    
+  });
+  
+  // Rimuovi l'effetto di sfondo quando premi "Stop"
+  document.getElementById('stop-button').addEventListener('click', () => {
+    // Rimuovi la classe che nasconde lo sfondo
+    document.body.classList.remove('background-active');
+    
+  });
 
