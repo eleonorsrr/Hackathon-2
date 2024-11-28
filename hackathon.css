@@ -1,10 +1,12 @@
-/* Inizialmente non c'è alcun sfondo */
 body {
     height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #fff; /* Colore di sfondo predefinito */
-    transition: background-image 0.5s ease-in-out; /* Animazione per il cambiamento del background */
+    text-align: center; 
+    color: yellow; 
+    background-color: #471548; 
+    transition: background-image 0.5s ease-in-out; 
+    /* Animazione per il cambiamento del background */
   }
   
   /* Classe che si applica quando la melodia inizia a suonare */
@@ -39,6 +41,8 @@ body {
     transform: scale(1.1); /* Aumenta leggermente la dimensione al passaggio del mouse */
   }
   
+ 
+
   .button1 {
     position: absolute;
     top: 210px;
@@ -53,13 +57,3 @@ body {
   }
 
 
-  document.querySelector("#start-button").addEventListener("click", () => {
-    document.body.classList.add("background-active");
-    // Altri codici per avviare la melodia
-});
-
-
-document.querySelector("#stop-button").addEventListener("click", () => {
-    document.body.classList.remove("background-active");
-    // Altri codici per fermare la melodia
-});
